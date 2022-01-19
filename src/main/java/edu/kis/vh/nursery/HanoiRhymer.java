@@ -1,7 +1,6 @@
 package edu.kis.vh.nursery;
 
 public class HanoiRhymer extends defaultCountingOutRhymer {
-
 int totalRejected = 0;
 
 	public int reportRejected() {
@@ -15,3 +14,5 @@ int totalRejected = 0;
 				super.countIn(in);
 	}
 }
+
+//	kombinacja klawiszy alt + ← oraz alt + → przelacza owtwarte pliki
