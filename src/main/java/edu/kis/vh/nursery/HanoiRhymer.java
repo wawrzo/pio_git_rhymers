@@ -1,17 +1,27 @@
 package edu.kis.vh.nursery;
 
-public class HanoiRhymer extends defaultCountingOutRhymer {
+public class HanoiRhymer extends DefaultCountingOutRhymer {
+private int totalRejected = 0;
 
-int totalRejected = 0;
-
-	public int reportRejected() {
-		return totalRejected;
+	protected int reportRejected() {
+		return getTotalRejected();
 	}
 
+	@Override
 	public void countIn(int in) {
 	if (!callCheck() && in > peekaboo())
-			totalRejected++;
+			setTotalRejected(getTotalRejected() + 1);
 			else
 				super.countIn(in);
 	}
+
+	private int getTotalRejected() {
+		return totalRejected;
+	}
+
+	private void setTotalRejected(int totalRejected) {
+		this.totalRejected = totalRejected;
+	}
 }
+
+//	kombinacja klawiszy alt + ← oraz alt + → przelacza owtwarte pliki
